@@ -1,0 +1,25 @@
+server:
+  port: 80
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/reggie
+    username: root
+    password: root
+mybatis-plus:
+  global-config:
+    db-config:
+      #说明 MyBatis-Plus默认的主键策略是:ASSIGN_ID (使用了雪花算法)
+      id-type: assign_id
+
+#     将表中的属性以下划线分割的
+#  mybatisplus默认是就是按照驼峰命名的规则来的，这里只是在mybatis中牵引过来的，那里面这个默认值是false
+  configuration:
+    map-underscore-to-camel-case: true
+#    将执行的sql语句在控制台上输出
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#定义文件存储路径
+food:
+  path: F:\img\
